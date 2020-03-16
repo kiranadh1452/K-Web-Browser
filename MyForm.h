@@ -43,6 +43,11 @@ namespace Project1 {
 
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::WebBrowser^ webBrowser;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+
+
+
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -68,11 +73,15 @@ namespace Project1 {
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->txtNavigate = (gcnew System::Windows::Forms::TextBox());
 			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->webBrowser = (gcnew System::Windows::Forms::WebBrowser());
+			this->webBrowser = (gcnew System::Windows::Forms::WebBrowser()); webBrowser->Navigate("www.google.com");
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
+			this->button1->ForeColor = System::Drawing::Color::Black;
 			this->button1->Location = System::Drawing::Point(18, 19);
 			this->button1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button1->Name = L"button1";
@@ -84,6 +93,7 @@ namespace Project1 {
 			// 
 			// button2
 			// 
+			this->button2->ForeColor = System::Drawing::Color::Black;
 			this->button2->Location = System::Drawing::Point(58, 19);
 			this->button2->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button2->Name = L"button2";
@@ -95,6 +105,7 @@ namespace Project1 {
 			// 
 			// button3
 			// 
+			this->button3->ForeColor = System::Drawing::Color::Black;
 			this->button3->Location = System::Drawing::Point(99, 19);
 			this->button3->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button3->Name = L"button3";
@@ -106,6 +117,7 @@ namespace Project1 {
 			// 
 			// button5
 			// 
+			this->button5->ForeColor = System::Drawing::Color::Black;
 			this->button5->Location = System::Drawing::Point(723, 19);
 			this->button5->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button5->Name = L"button5";
@@ -125,6 +137,7 @@ namespace Project1 {
 			// 
 			// button4
 			// 
+			this->button4->ForeColor = System::Drawing::Color::Black;
 			this->button4->Location = System::Drawing::Point(140, 19);
 			this->button4->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button4->Name = L"button4";
@@ -139,12 +152,33 @@ namespace Project1 {
 			this->webBrowser->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->webBrowser->Location = System::Drawing::Point(26, 79);
+			this->webBrowser->Location = System::Drawing::Point(18, 79);
 			this->webBrowser->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->webBrowser->MinimumSize = System::Drawing::Size(30, 29);
 			this->webBrowser->Name = L"webBrowser";
-			this->webBrowser->Size = System::Drawing::Size(810, 450);
+			this->webBrowser->Size = System::Drawing::Size(804, 450);
 			this->webBrowser->TabIndex = 6;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(18, 79);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(77, 74);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
+			this->pictureBox1->TabIndex = 7;
+			this->pictureBox1->TabStop = false;
+			// 
+			// dateTimePicker1
+			// 
+			this->dateTimePicker1->CalendarFont = (gcnew System::Drawing::Font(L"Constantia", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Constantia", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dateTimePicker1->Location = System::Drawing::Point(301, 51);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(286, 27);
+			this->dateTimePicker1->TabIndex = 8;
 			// 
 			// MyForm
 			// 
@@ -153,6 +187,8 @@ namespace Project1 {
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(840, 543);
+			this->Controls->Add(this->dateTimePicker1);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->webBrowser);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->txtNavigate);
@@ -166,8 +202,9 @@ namespace Project1 {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"MyForm";
-			this->Text = L"K WEB BROWSER";
+			this->Text = L"KM BROWSER";
 			this->TransparencyKey = System::Drawing::Color::Black;
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -187,6 +224,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	webBrowser->Navigate("www.youtube.com");
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 	webBrowser->Navigate(txtNavigate->Text);
 }
 };
